@@ -37,4 +37,10 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=partior-com_test-java-app1
       - name: Build
         run: mvn --batch-mode --update-snapshots verify
+      - name: Upload Artifact
+        run: mkdir staging && cp target/*.jar staging
+        uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: staging
         
