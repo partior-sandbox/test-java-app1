@@ -124,8 +124,8 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>central</id>
-                    <name>oss-releases</name>
-                    <url>https://oss.jfrog.org/artifactory/oss-releases</url>
+                    <name>Central Repository</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
