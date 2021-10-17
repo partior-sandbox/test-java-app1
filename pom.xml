@@ -124,8 +124,8 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>central</id>
-                    <name>bintray-plugins</name>
-                    <url>https://oss.jfrog.org</url>
+                    <name>oss-releases</name>
+                    <url>https://oss.jfrog.org/artifactory/oss-releases</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
