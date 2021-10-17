@@ -2,13 +2,13 @@
 name: Build
 on:
   push:
-    branches: [ "**" ]
+    #branches: [ "**" ]
   pull_request:
     types: [opened, synchronize, reopened]
     branches: [ main ]
 jobs:
   build:
-    name: Build
+    name: Build & Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -61,6 +61,7 @@ jobs:
           path: staging
 
   release:
+    name: Release Package to Repository
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
