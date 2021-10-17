@@ -61,37 +61,37 @@
             <repositories>
                 <repository>
                     <id>artifactory</id>
-                    <name>your-artifactory</name>
-                    <url>https://your-artifactory.jfrog.io/artifactory/libs-release-local</url>
+                    <name>frankielim.jfrog.io</name>
+                    <url>https://frankielim.jfrog.io/artifactory/libs-release-local</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
-                <snapshots>
-                    <enabled>false</enabled>
-                </snapshots>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
                 </repository>
-    </repositories>
-    <pluginRepositories>
-      <pluginRepository>
-        <id>artifactory</id>
-        <name>your-artifactory</name>
-        <url>https://your-artifactory.jfrog.io/artifactory/libs-release-local</url>
-        <releases>
-          <enabled>true</enabled>
-        </releases>
-        <snapshots>
-          <enabled>false</enabled>
-        </snapshots>
-      </pluginRepository>
-      <pluginRepository>
-        <snapshots>
-          <enabled>false</enabled>
-        </snapshots>
-        <id>central</id>
-        <name>bintray-plugins</name>
-        <url>https://jcenter.bintray.com</url>
-      </pluginRepository>
-    </pluginRepositories>
-  </profile>
-</profiles>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>artifactory</id>
+                    <name>frankielim.jfrog.io</name>
+                    <url>https://frankielim.jfrog.io/artifactory/libs-release-local</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>bintray-plugins</name>
+                    <url>https://jcenter.bintray.com</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
 </project>
