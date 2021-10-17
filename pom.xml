@@ -125,7 +125,7 @@
                     </snapshots>
                     <id>central</id>
                     <name>bintray-plugins</name>
-                    <url>https://jcenter.bintray.com</url>
+                    <url>https://oss.jfrog.org</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
