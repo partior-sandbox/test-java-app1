@@ -89,7 +89,7 @@ jobs:
               }
             ]'
       - name: Configure git
-        run: 
+        run: |
           git config --global committer.email "noreply@github.com"
           git config --global committer.name "GitHub"
           git config --global author.email "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -101,8 +101,7 @@ jobs:
           ARTIFACTORY_USERNAME_REF: "stream-github-actions"
           ARTIFACTORY_TOKEN_REF: ${{ secrets.ARTIFACTORY_TOKEN }}
           BUILD_ENV: 'github-actions'
-        run: 
-          ./mvnw --batch-mode release:prepare
+        run: ./mvnw --batch-mode release:prepare
       - name: Push the release
         env:
           SCM_USERNAME_REF: 'github-actions'
