@@ -35,7 +35,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=partior-com_test-java-app1
+      - name: Setup Maven settings.xml
+        uses: whelk-io/maven-settings-xml-action@v11
+        with:
+          servers: |
+            '[
+              {
+                "id": "artifactory",
+                "username": "${env.ARTIFACTORY_USERNAME_REF}",
+                "password": "${env.ARTIFACTORY_TOKEN_REF}"
+              }
+            ]'
       - name: Build with Maven
+        env:
+          ARTIFACTORY_USERNAME_REF: "stream-github-actions"
+          ARTIFACTORY_TOKEN_REF: ${{ secrets.ARTIFACTORY_TOKEN }}
+          BUILD_ENV: 'github-actions'
         run: mvn -B package --file pom.xml
       - name: Copy artifact to staging folder
         run: mkdir staging && cp target/*.jar staging
