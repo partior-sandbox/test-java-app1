@@ -245,7 +245,7 @@ Here’s the completed `pom.xml` file:
 </project>
 ```
 
-### Run project
+### Run project 
 ---
 + To run this project run the following command.
 
