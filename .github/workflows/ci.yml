@@ -206,9 +206,12 @@ jobs:
         helm repo add default-helm https://frankielim.jfrog.io/artifactory/default-helm --username ${{ secrets.ARTIFACTORY_USERNAME }} --password ${{ secrets.ARTIFACTORY_PASSWORD}}
         helm repo list
 
-    - name: Package Chart
+    - name: Package Helm Chart
       run: |
-        helm package helm/myjavaapp1/
+        helm package helm/myjavaapp1/ helm/
         pwd
         ls -R
 
+    - name: Push Helm Chart
+      run: | 
+        helm push-artifactory /helm/myjavaapp1-*.tgz default-helm
