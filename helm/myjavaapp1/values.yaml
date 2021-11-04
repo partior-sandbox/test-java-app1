@@ -5,13 +5,12 @@
 replicaCount: 2
 
 image:
-  repository: frankielim.jfrog.io/default-docker-local/test-java-app1
+  repository: nginx
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: ""
 
-imagePullSecrets: 
-  - name: frankielim-jfrog
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
