@@ -208,8 +208,9 @@ jobs:
 
     - name: Package Helm Chart
       run: |
-        helm package helm/myjavaapp1/ helm/
         pwd
+        cd helm
+        helm package myjavaapp1/ 
         ls -R
 
     - name: Push Helm Chart
