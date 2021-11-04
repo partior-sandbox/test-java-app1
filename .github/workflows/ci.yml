@@ -58,6 +58,8 @@ jobs:
         with:
           name: Package
           path: staging
+      - name: List Working Dir
+        run: ls -R
       - name: Run Jar
         run: java -cp target/jb-hello-world-maven-*.jar hello.HelloWorld
 
