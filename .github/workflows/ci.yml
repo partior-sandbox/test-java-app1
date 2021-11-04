@@ -8,9 +8,6 @@ on:
 jobs:
   build:
 
-    if: false
-    # Temporary disable this step.
-
     name: Build & Scan
     runs-on: ubuntu-latest
     steps:
@@ -72,9 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
 
-    if: false
-    # Temporary disable this step.
-    #if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v2
