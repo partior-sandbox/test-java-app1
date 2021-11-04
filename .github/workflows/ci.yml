@@ -211,9 +211,7 @@ jobs:
         pwd
         cd helm
         helm package myjavaapp1/ 
-        ls -R
 
     - name: Push Helm Chart
       run: | 
-        ls -R
         helm push-artifactory ./helm/myjavaapp1-*.tgz default-helm
