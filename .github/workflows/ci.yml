@@ -215,4 +215,4 @@ jobs:
 
     - name: Push Helm Chart
       run: | 
-        helm push-artifactory /helm/myjavaapp1-*.tgz default-helm
+        helm push-artifactory myjavaapp1-*.tgz default-helm
