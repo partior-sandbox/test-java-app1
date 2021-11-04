@@ -65,7 +65,11 @@ jobs:
         run: java -cp target/jb-hello-world-maven-*.jar hello.HelloWorld
 
   release:
-    name: Release Package to Repository
+
+    if: false
+    # Temporary disable
+
+    name: Release Jar Package to Maven Release Repository
     runs-on: ubuntu-latest
     needs: build
 
