@@ -1,10 +1,10 @@
 name: Build & Scan
-on:
-  push:
-    #branches: [ "**" ]
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [ main ]
+#on:
+  #push:
+  #  branches: [ "**" ]
+  #pull_request:
+  #  types: [opened, synchronize, reopened]
+  #  branches: [ main ]
 jobs:
   build:
     name: Build & Scan
