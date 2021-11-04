@@ -182,7 +182,7 @@ jobs:
     - name: Install Helm Tool
       uses: azure/setup-helm@v1
       with:
-        version: 
+        version: 'latest'
       id: install
 
     - name: Show Helm Version
