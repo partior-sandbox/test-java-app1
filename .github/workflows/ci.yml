@@ -176,3 +176,18 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
+  package_push_helm_chart:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: "Helm Publish"
+      uses: mbovo/action-helm-tools@v1.0.0
+      with:
+        action: "push"
+      env:
+        CHART_DIR: helm/myjavaapp1
+        ARTIFACTORY_URL: https://frankielim.jfrog.io/artifactory/default-helm/
+        ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+        ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+
