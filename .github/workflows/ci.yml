@@ -177,8 +177,12 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
   package_push_helm_chart:
+  
     runs-on: ubuntu-latest
     steps:
+    - name: Check Out Repo 
+      uses: actions/checkout@v2
+
     - name: Install Helm Tool
       uses: azure/setup-helm@v1
       with:
