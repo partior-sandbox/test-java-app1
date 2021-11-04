@@ -1,3 +1,6 @@
+# Running the docker image
+docker run --platform linux/amd64 --pull always frankielim.jfrog.io/default-docker-local/test-java-app1:latest
+
 # Building Java Projects with Maven
 This guide walks you through using Maven to build a simple Java project.     
 
