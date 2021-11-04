@@ -1,6 +1,7 @@
-FROM openjdk:11
+FROM openjdk:11-alpine
+LABEL maintainer = "frankie.lim@partior.com"
 COPY target/* /tmp/myapp
 WORKDIR /tmp/myapp
 RUN ls -R /tmp/myapp
-RUN java -cp /tmp/myapp/jb-hello-world-maven-*.jar hello.HelloWorld
-LABEL maintainer = "frankie.lim@partior.com"
+RUN java 
+CMD ["java", "-cp /tmp/myapp/jb-hello-world-maven-*.jar hello.HelloWorld"]
