@@ -1,5 +1,5 @@
 name: Build & Scan
-#on:
+on:
   #push:
   #  branches: [ "**" ]
   #pull_request:
