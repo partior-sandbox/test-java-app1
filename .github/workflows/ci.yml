@@ -179,15 +179,12 @@ jobs:
   package_push_helm_chart:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Helm Publish
-      uses: mbovo/action-helm-artifactory@v1.0.0
+    - name: Install Helm Tool
+      uses: azure/setup-helm@v1
       with:
-        ACTION: "push"
-      env:
-        CHART_DIR: helm/myjavaapp1
-        ARTIFACTORY_URL: https://frankielim.jfrog.io/artifactory/default-helm/
-        ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-        ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        version: '<version>' # default is latest stable
+      id: install
+
+    - name: Show Helm Version
+      run: helm version
 
