@@ -198,8 +198,13 @@ jobs:
 
     - name: Install Push_Artifactory Plugin
       run: | 
-        helm plugin install https://github.com/belitre/helm-push-artifactory-plugin --version 1.0.1
+        helm plugin install https://github.com/belitre/helm-push-artifactory-plugin --version 1.0.2
         helm plugin list
+
+    - name: Add Repo
+      run: | 
+        helm repo add default-helm https://frankielim.jfrog.io/artifactory/default-helm --username ${{ secrets.ARTIFACTORY_USERNAME }} --password ${{ secrets.ARTIFACTORY_PASSWORD}}
+        helm repo list
 
     - name: Package Chart
       run: |
