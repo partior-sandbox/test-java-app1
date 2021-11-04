@@ -119,6 +119,7 @@ jobs:
 
   build_push_docker:
     name: Build and Push Docker Image
+    needs: release
     runs-on: ubuntu-latest
     steps:
     
