@@ -188,3 +188,11 @@ jobs:
     - name: Show Helm Version
       run: helm version
 
+    - name: Install Push_Artifactory Plugin
+      run: helm plugin install https://github.com/belitre/helm-push-artifactory-plugin --version 1.0.1
+      run: helm plugin list
+
+    - name: Package Chart
+      run: helm package helm/myjavaapp1/
+      
+
