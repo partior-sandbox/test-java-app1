@@ -1,5 +1,4 @@
-# Sonarcloud test scan
-name: Build
+name: Build & Scan
 on:
   push:
     #branches: [ "**" ]
@@ -30,11 +29,11 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: SonarCloud analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=partior-com_test-java-app1
+      #- name: SonarCloud analyze
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+      #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #  run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=partior-com_test-java-app1
       - name: Setup Maven settings.xml
         uses: whelk-io/maven-settings-xml-action@v11
         with:
@@ -59,6 +58,8 @@ jobs:
         with:
           name: Package
           path: staging
+      - name: Run Jar
+        run: java -cp target/jb-hello-world-maven-*.jar hello.HelloWorld
 
   release:
     name: Release Package to Repository
